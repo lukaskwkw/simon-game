@@ -1,0 +1,175 @@
+$a: 40rem;
+$aSmall: 30rem;
+
+body {
+
+}
+
+
+$sm: "screen and (max-width: 500px)";
+
+
+.simon{
+	position: absolute;
+	height: $a;
+	width: $a;
+	top: 50%;
+	left:50%;
+	margin-top: -($a/2);
+	margin-left: -($a/2);
+	transition: all ease .5s;
+	// border: 1em solid $border;
+	border-radius: 50%;
+	@media #{$sm} {
+		height: $aSmall;
+		width: $aSmall;
+		margin-top: -($aSmall/2);
+		margin-left: -($aSmall/2);
+	}
+}
+
+.main-heading {
+	display: none;
+	text-align: center;
+	font-size: 3em;
+	@media #{$sm} and (orientation: portrait) {
+		display: block;
+	}
+}
+$border: #2c3e50;
+.simon__panel {
+	position: absolute;
+	// display: table;
+	border-radius: 50%;
+	height: 50%;
+	width: 50%;
+	top: 50%;
+	left:50%;
+	margin-top: -25%;
+	background-color: #ecf0f1;
+	border: 5px solid $border;
+	z-index: 1;
+	margin-left: -25%;
+	text-align: center;
+	overflow: hidden;
+	// padding: .3em;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
+.wrap {
+	border: 5px solid #ecf0f1;
+	border-radius: 50%;
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+
+}
+
+
+.simon__panel__heading{
+font-family: 'Oswald', sans-serif;
+	padding: .7em;
+	background-color: $border;
+	margin: 0;
+	// margin-bottom: 1em;
+	// border-top-left-radius: 20em;
+	// border-top-right-radius: 20em;
+	color: white;
+ 	@media #{$sm}{
+ 			padding: .7em;
+ 			font-size: 1.4em;
+ 		// display: none;
+ 	}
+}
+span.small{
+	color: #fff;	
+	font-size: 50%;
+	// font-weight: 800;
+}
+
+.simon__panel__control{
+	margin: 0 auto;
+}
+
+.btn {
+	display: inline;
+}
+
+$shadowInsetColor: #aaa;
+.green {
+	background-color: #2ecc71;
+	transition: all ease .5s;
+	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
+	&:hover {
+background-color: darken(#2ecc71,15%);
+	}
+}
+.red
+{
+	background-color: #e74c3c;
+	transition: all ease .5s;
+	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
+	&:hover {
+background-color: darken(#e74c3c,15%);
+	}
+}
+.yellow
+{
+	background-color: #f1c40f;
+	transition: all ease .5s;
+	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
+	&:hover {
+background-color: darken(#f1c40f,15%);
+	}
+}
+.blue
+{
+	background-color: #4aa3df;
+	transition: all ease .5s;
+	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
+	&:hover {
+background-color: darken(#4aa3df,15%);
+	}
+}
+
+
+.space {
+	cursor: pointer;
+	height: 50%;
+	width: 50%;
+	border: .5em $border solid;
+	float: left;
+		@media #{$sm} {
+		border: .1em $border solid;
+	}
+}
+
+.simon__t-l
+{
+	border-top-left-radius: 100%;
+
+}
+.simon__t-r
+{
+	border-top-right-radius: 100%;
+
+}
+.simon__b-l
+{
+	border-bottom-left-radius: 100%;
+
+}
+.simon__b-r
+{
+	border-bottom-right-radius: 100%;
+
+}
+
+
+.simon__panel {
+
+}
+
