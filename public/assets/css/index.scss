@@ -3,8 +3,30 @@
 $a: 40rem;
 $aSmall: 30rem;
 
-body {
 
+
+html { font-size: 62.5%; }
+body { font-size: 1em;}
+
+@media (max-width: 400px) {
+    html { font-size: 75%; }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+    html { font-size: 125%; }
+}
+
+@media (min-width: 801px) and (max-width: 1400px) {
+    html { font-size: 250%; }
+}
+
+
+@media (min-width: 1401px) {
+    html { font-size: 350%; }
+}
+
+body {
+	font-size: 4vmin;
 }
 
 
@@ -62,6 +84,7 @@ $border: #2c3e50;
 	margin-left: -25%;
 	text-align: center;
 	overflow: hidden;
+	font-size: 100%;
 	// padding: .3em;
   // display: flex;
   // flex-direction: column;
@@ -81,24 +104,25 @@ $border: #2c3e50;
 .top-wrap{
 	background-color: $border;
 	height: 30%;
-	padding-top: 1.3em;
-		@media #{$sm}{
-			padding-top: .7em;
-		}
+	padding-top: 7%;
+		// @media #{$sm}{
+		// 	padding-top: .7em;
+		// }
 }
 
 .simon__panel__brand{
 font-family: 'Oswald', sans-serif;
 margin: 0;
 	color: white;
- 	@media #{$sm}{
- 			font-size: 1em;
- 	}
+	font-size:1em;
+ 	// @media #{$sm}{
+ 	// 		font-size: 1em;
+ 	// }
 
- 	@media #{$lg} {
- 		font-size: 5em;
+ 	// @media #{$lg} {
+ 	// 	font-size: 5em;
  		
- 	}
+ 	// }
 }
 
 .simon__panel__screen{
@@ -106,14 +130,26 @@ margin: 0;
 border-radius: 10%;
     width: 40%;
     height: 20%;
+    color: red;
+    // padding: 5%;
+    font-size: 1em;
  //    position: absolute;
  //    top: 50%;
  //    left: 50%;
  // margin-left: -20%;
  // margin-top: -10%;
+ text-align: center;
     margin-top: 10%;
  margin-left: auto;
  margin-right: auto;
+}
+
+.round {
+ position: absolute;
+ top: 50%;
+ left: 46%;
+ // transform: translateX(-50%);
+ transform: translateY(-50%);
 }
 
 span.small{
@@ -126,8 +162,40 @@ span.small{
 	margin: 0 auto;
 }
 
-.btn {
-	display: inline;
+// .btn {
+// 	display: inline;
+// }
+
+.space {
+	cursor: pointer;
+	height: 50%;
+	width: 50%;
+	border: 1vmin $border solid;
+	float: left;
+
+}
+
+
+
+.simon__t-l
+{
+	border-top-left-radius: 100%;
+
+}
+.simon__t-r
+{
+	border-top-right-radius: 100%;
+
+}
+.simon__b-l
+{
+	border-bottom-left-radius: 100%;
+
+}
+.simon__b-r
+{
+	border-bottom-right-radius: 100%;
+
 }
 
 $shadowInsetColor: #aaa;
@@ -167,39 +235,4 @@ background-color: darken(#4aa3df,15%);
 	}
 }
 
-
-.space {
-	cursor: pointer;
-	height: 50%;
-	width: 50%;
-	border: 1vmin $border solid;
-	float: left;
-
-}
-
-.simon__t-l
-{
-	border-top-left-radius: 100%;
-
-}
-.simon__t-r
-{
-	border-top-right-radius: 100%;
-
-}
-.simon__b-l
-{
-	border-bottom-left-radius: 100%;
-
-}
-.simon__b-r
-{
-	border-bottom-right-radius: 100%;
-
-}
-
-
-.simon__panel {
-
-}
 
