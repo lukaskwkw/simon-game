@@ -1,25 +1,20 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
 .simon {
   position: absolute;
-  height: 40rem;
-  width: 40rem;
+  height: 80vmin;
+  width: 80vmin;
   top: 50%;
   left: 50%;
-  margin-top: -20rem;
-  margin-left: -20rem;
+  margin-top: -40vmin;
+  margin-left: -40vmin;
   transition: all ease .5s;
   border-radius: 50%; }
-  @media screen and (max-width: 500px) {
-    .simon {
-      height: 30rem;
-      width: 30rem;
-      margin-top: -15rem;
-      margin-left: -15rem; } }
 
 .main-heading {
   display: none;
   text-align: center;
   font-size: 3em; }
-  @media screen and (max-width: 500px) and (orientation: portrait) {
+  @media screen and (max-width: 700px) and (orientation: portrait) {
     .main-heading {
       display: block; } }
 
@@ -32,30 +27,47 @@
   left: 50%;
   margin-top: -25%;
   background-color: #ecf0f1;
-  border: 5px solid #2c3e50;
+  border: 2vmin solid #2c3e50;
   z-index: 1;
   margin-left: -25%;
   text-align: center;
   overflow: hidden; }
 
 .wrap {
-  border: 5px solid #ecf0f1;
+  border: .5vmin solid #ecf0f1;
   border-radius: 50%;
   position: absolute;
   height: 100%;
   overflow: hidden;
   width: 100%; }
 
-.simon__panel__heading {
-  font-family: 'Oswald', sans-serif;
-  padding: .7em;
+.top-wrap {
   background-color: #2c3e50;
+  height: 30%;
+  padding-top: 1.3em; }
+  @media screen and (max-width: 700px) {
+    .top-wrap {
+      padding-top: .7em; } }
+
+.simon__panel__brand {
+  font-family: 'Oswald', sans-serif;
   margin: 0;
   color: white; }
-  @media screen and (max-width: 500px) {
-    .simon__panel__heading {
-      padding: .7em;
-      font-size: 1.4em; } }
+  @media screen and (max-width: 700px) {
+    .simon__panel__brand {
+      font-size: 1em; } }
+  @media screen and (min-width: 1600px) and (min-height: 1280px) {
+    .simon__panel__brand {
+      font-size: 5em; } }
+
+.simon__panel__screen {
+  background-color: #790000;
+  border-radius: 10%;
+  width: 40%;
+  height: 20%;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto; }
 
 span.small {
   color: #fff;
@@ -99,11 +111,8 @@ span.small {
   cursor: pointer;
   height: 50%;
   width: 50%;
-  border: 0.5em #2c3e50 solid;
+  border: 1vmin #2c3e50 solid;
   float: left; }
-  @media screen and (max-width: 500px) {
-    .space {
-      border: 0.1em #2c3e50 solid; } }
 
 .simon__t-l {
   border-top-left-radius: 100%; }
