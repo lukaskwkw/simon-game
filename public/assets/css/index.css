@@ -90,6 +90,7 @@ span.small {
   font-size: 1.4em;
   left: 23%;
   font-family: 'VT323';
+  display: none;
   transform: translateY(-50%); }
 
 .btn {

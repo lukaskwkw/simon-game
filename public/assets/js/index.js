@@ -47,6 +47,7 @@ function power () {
 	$(this).toggleClass("active");
 	if (on===false)
 	{
+		$round.fadeIn(500);
 		$round.html("-")
 		on=true;
 		var x = randomSpace(0,3);
@@ -57,8 +58,9 @@ function power () {
 		return;
 	}
 	//else
-	$round.html("");
+	$(".highlight").removeClass("highlight");
 	zeroGame();
+	$round.fadeOut(500);
 	on=false;
 	return;
 }
@@ -95,10 +97,11 @@ function playerTurn () {
 				var x=randomSpace(0,3);
 				levelArr.push(x);
 			}
-			loop();
 			$round.show();
 			clearInterval(interval);
 			$round.html(level);
+			loop();
+
 		},1800);
 
 	},SLEEP)
@@ -175,10 +178,11 @@ function spaceClick () {
 				var x=randomSpace(0,3);
 				levelArr.push(x);
 			}
-			loop();
 			$round.show();
 			clearInterval(interval);
 			$round.html(level);
+			loop();
+
 		},1800);
 
 		return;
