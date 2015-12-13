@@ -18,6 +18,7 @@ body {
   html {
     font-size: 350%; } }
 body {
+  background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/black-Linen.png");
   font-size: 4vmin; }
 
 .simon {
@@ -30,14 +31,6 @@ body {
   margin-left: -40vmin;
   transition: all ease .5s;
   border-radius: 50%; }
-
-.main-heading {
-  display: none;
-  text-align: center;
-  font-size: 3em; }
-  @media screen and (max-width: 700px) and (orientation: portrait) {
-    .main-heading {
-      display: block; } }
 
 .simon__panel {
   position: absolute;
@@ -74,30 +67,63 @@ body {
   color: white;
   font-size: 1em; }
 
-.simon__panel__screen {
-  background-color: #790000;
-  border-radius: 10%;
-  width: 40%;
-  height: 20%;
-  color: red;
-  font-size: 1em;
-  text-align: center;
-  margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto; }
-
-.round {
-  position: absolute;
-  top: 50%;
-  left: 46%;
-  transform: translateY(-50%); }
-
 span.small {
   color: #fff;
   font-size: 50%; }
 
-.simon__panel__control {
-  margin: 0 auto; }
+.simon__panel__screen {
+  background-color: #790000;
+  border-radius: 10%;
+  width: 33%;
+  height: 20%;
+  color: red;
+  border: 0.2em solid #2c3e50;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 7%;
+  margin-left: 10%;
+  float: left; }
+
+.round {
+  position: absolute;
+  top: 47%;
+  font-size: 1.4em;
+  left: 23%;
+  font-family: 'VT323';
+  transform: translateY(-50%); }
+
+.btn {
+  border: 1px #999 solid;
+  border-radius: 0;
+  font-family: Arial;
+  font-weight: 800;
+  background-color: #ecf0f1; }
+
+.btn-strict {
+  margin-top: 2%;
+  float: left;
+  font-size: 0.7em;
+  height: 4em;
+  width: 4em;
+  margin-left: 10%;
+  border-radius: 50%;
+  background-color: #ecf0f1;
+  text-decoration: underline; }
+  .btn-strict.active {
+    color: #f39c12; }
+
+.btn-play {
+  float: left;
+  font-size: 0.8em;
+  width: 4em;
+  padding-top: 8%;
+  height: 4em;
+  margin-left: 32%;
+  border-radius: 50%; }
+  .btn-play.active {
+    color: #27ae60; }
+  .btn-play > i {
+    font-size: 1.2em; }
 
 .space {
   cursor: pointer;
@@ -119,31 +145,23 @@ span.small {
   border-bottom-right-radius: 100%; }
 
 .green {
-  background-color: #2ecc71;
-  transition: all ease .5s;
-  box-shadow: inset 1px 1px 100px 1em rgba(170, 170, 170, 0.5); }
-  .green:hover {
-    background-color: #208e4e; }
+  background-color: #2ecc71; }
+  .green.highlight {
+    background-color: #7ee2a8; }
 
 .red {
-  background-color: #e74c3c;
-  transition: all ease .5s;
-  box-shadow: inset 1px 1px 100px 1em rgba(170, 170, 170, 0.5); }
-  .red:hover {
-    background-color: #bf2718; }
+  background-color: #e74c3c; }
+  .red.highlight {
+    background-color: #f29f97; }
 
 .yellow {
-  background-color: #f1c40f;
-  transition: all ease .5s;
-  box-shadow: inset 1px 1px 100px 1em rgba(170, 170, 170, 0.5); }
-  .yellow:hover {
-    background-color: #aa8a0a; }
+  background-color: #f1c40f; }
+  .yellow.highlight {
+    background-color: #f7dc6f; }
 
 .blue {
-  background-color: #4aa3df;
-  transition: all ease .5s;
-  box-shadow: inset 1px 1px 100px 1em rgba(170, 170, 170, 0.5); }
-  .blue:hover {
-    background-color: #217dbb; }
+  background-color: #4aa3df; }
+  .blue.highlight {
+    background-color: #a1cfee; }
 
 /*# sourceMappingURL=index.css.map */

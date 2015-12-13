@@ -26,6 +26,7 @@ body { font-size: 1em;}
 }
 
 body {
+	background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/black-Linen.png");
 	font-size: 4vmin;
 }
 
@@ -60,14 +61,14 @@ $simonSize: 80vmin;
 	// }
 }
 
-.main-heading {
-	display: none;
-	text-align: center;
-	font-size: 3em;
-	@media #{$sm} and (orientation: portrait) {
-		display: block;
-	}
-}
+// .main-heading {
+// 	display: none;
+// 	text-align: center;
+// 	font-size: 3em;
+// 	@media #{$sm} and (orientation: portrait) {
+// 		display: block;
+// 	}
+// }
 $border: #2c3e50;
 .simon__panel {
 	position: absolute;
@@ -125,13 +126,21 @@ margin: 0;
  	// }
 }
 
+span.small{
+	color: #fff;	
+	font-size: 50%;
+	// font-weight: 800;
+}
+
+
 .simon__panel__screen{
  background-color: #790000;
 border-radius: 10%;
-    width: 40%;
+    width: 33%;
     height: 20%;
     color: red;
     // padding: 5%;
+    border: .2em solid $border;
     font-size: 1em;
  //    position: absolute;
  //    top: 50%;
@@ -139,32 +148,65 @@ border-radius: 10%;
  // margin-left: -20%;
  // margin-top: -10%;
  text-align: center;
-    margin-top: 10%;
- margin-left: auto;
- margin-right: auto;
+    margin-top: 7%;
+ margin-left: 10%;
+ float: left;
 }
 
 .round {
  position: absolute;
- top: 50%;
- left: 46%;
+ top: 47%;
+ font-size: 1.4em;
+ left: 23%;
+ font-family: 'VT323';
  // transform: translateX(-50%);
  transform: translateY(-50%);
 }
 
-span.small{
-	color: #fff;	
-	font-size: 50%;
-	// font-weight: 800;
+.btn {
+	border: 1px #999 solid;
+
+	border-radius: 0;
+		font-family: Arial;
+	font-weight: 800;
+	background-color: #ecf0f1;
 }
 
-.simon__panel__control{
-	margin: 0 auto;
+//glyphicon glyphicon-record
+.btn-strict
+{
+	margin-top: 2%;
+	float: left;
+	font-size: 0.7em;
+	height: 4em;
+	width: 4em;
+	margin-left: 10%;
+	border-radius: 50%;
+	background-color: #ecf0f1;
+	text-decoration: underline;
+		&.active {
+		color: #f39c12;
+	}
+
 }
 
-// .btn {
-// 	display: inline;
-// }
+.btn-play{
+	float: left;
+	font-size: 0.8em;
+	width:4em;
+	padding-top: 8%;
+	height: 4em;
+	margin-left: 32%;
+	border-radius: 50%;
+	&.active {
+		color: #27ae60;
+	}
+	>i{
+		font-size: 1.2em;
+	}
+}
+
+
 
 .space {
 	cursor: pointer;
@@ -174,8 +216,13 @@ span.small{
 	float: left;
 
 }
+$shadowtColor: lighten(#f1c40f, 10%);
+$boxShadowInset: inset .1em .1em 1em 1.5em rgba($shadowtColor, 0.8);
+$boxShadowOutset: .1em .1em 1em 1.5em rgba($shadowtColor, 0.8);
 
-
+// .highlight{
+// 	box-shadow: $boxShadowInset, $boxShadowOutset;
+// }
 
 .simon__t-l
 {
@@ -198,40 +245,54 @@ span.small{
 
 }
 
-$shadowInsetColor: #aaa;
+//box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
+
 .green {
 	background-color: #2ecc71;
-	transition: all ease .5s;
-	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
-	&:hover {
-background-color: darken(#2ecc71,15%);
+	// transition: all ease .5s;
+	// box-shadow: $boxShadow;
+	
+	// &:hover {
+// background-color: darken(#2ecc71,15%);
+	// }
+	&.highlight{
+		background-color: lighten(#2ecc71,20%);
 	}
 }
 .red
 {
 	background-color: #e74c3c;
-	transition: all ease .5s;
-	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
-	&:hover {
-background-color: darken(#e74c3c,15%);
+	// transition: all ease .5s;
+	// box-shadow: $boxShadow;
+	// &:hover {
+// background-color: darken(#e74c3c,15%);
+	// }
+	&.highlight{
+		background-color: lighten(#e74c3c,20%);
 	}
 }
 .yellow
 {
 	background-color: #f1c40f;
-	transition: all ease .5s;
-	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
-	&:hover {
-background-color: darken(#f1c40f,15%);
+	// transition: all ease .5s;
+	// box-shadow: $boxShadow;
+	// &:hover {
+// background-color: darken(#f1c40f,15%);
+	// }
+	&.highlight{
+		background-color: lighten(#f1c40f,20%);
 	}
 }
 .blue
 {
 	background-color: #4aa3df;
-	transition: all ease .5s;
-	box-shadow: inset 1px 1px 100px 1em rgba($shadowInsetColor, 0.5);
-	&:hover {
-background-color: darken(#4aa3df,15%);
+	// transition: all ease .5s;
+	// box-shadow: $boxShadow;
+	// &:hover {
+// background-color: darken(#4aa3df,15%);
+	// }
+	&.highlight{
+		background-color: lighten(#4aa3df,20%);
 	}
 }
 
