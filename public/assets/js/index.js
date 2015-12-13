@@ -12,10 +12,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
 var MAX_LEVEL = 20;
 var SPEED = 1500;
 var SPEED2 = 1000;
@@ -79,9 +75,14 @@ function loop () {
 }
 
 function playerTurn () {
+
 	repeat = false;
 	player = true;
+	step=0;
+	sleeper();
+}
 
+function sleeper () {
 	sleepTimeout = setTimeout(function () {
 		$round.html("!");
 		var interval = setInterval(function  () {
@@ -104,9 +105,7 @@ function playerTurn () {
 
 		},1800);
 
-	},SLEEP)
-
-	step=0;
+	},SLEEP);
 }
 
 function turnOffSpace () {
@@ -125,7 +124,7 @@ function turnOnSpace (id) {
 }
 
 function randomSpace (min,max) {
-	return Math.floor(Math.random()*(max-min+1)+min)
+	return Math.floor(Math.random()*(max-min+1)+min);
 }
 
 
@@ -144,12 +143,18 @@ function spaceClick () {
 	if (player===false)
 		return;
 
+/**
+ * After Click clear (clear sleeper) left time for repeat
+ * And set again
+ */
 	clearTimeout(sleepTimeout);
+	sleeper();
 	var space = $(this).attr("id");
 	audioArr[space].play();
 	$("#"+space).addClass("highlight");
 /**
  * if wrong button has been hit do follow:
+ * clear sleeper Timeout 
  * Remove highlight from button after few time
  * Display ! on panel screen
  * Check if strict button is active
@@ -159,6 +164,8 @@ function spaceClick () {
  */
  if (space!=levelArr[step])
  {		
+	clearTimeout(sleepTimeout);
+
  	setTimeout(function  () {
  		$("#"+space).removeClass("highlight");
  	},300);
@@ -189,18 +196,35 @@ function spaceClick () {
 	}
 	step++;
 
+/**
+ * it all set was correct then
+ * clear sleeper's time
+ * remove highligth
+ * random new space
+ * check what level is and set corresponding speed to the delay
+ * add random to game array and start new loop after little delay (1800)
+ */
 	if (step>=level){
-		// repeat=false;
+		clearTimeout(sleepTimeout);
+		
 		var x = randomSpace(0,3);
+		setTimeout(function  () {
+			$("#"+space).removeClass("highlight");
+		},300);
+
 		if (level===4) 
 			delay = SPEED2;
 		if (level===8)
 			delay = SPEED3;
 		if (level===12)
 			delay = SPEED4;
-		setTimeout(function  () {
-			$("#"+space).removeClass("highlight");
-		},300);
+		if (level===MAX_LEVEL){
+			player=false;
+			clearTimeout(sleepTimeout);
+			theEnd();
+		return;
+		}
+
 
 		step = 0;
 		levelArr.push(x);
@@ -217,4 +241,24 @@ function spaceClick () {
 	setTimeout(function  () {
 		$("#"+space).removeClass("highlight");
 	},300);
+}
+
+function theEnd () {
+	$round.html("**");
+	var interval = setInterval(function Victory () {
+		$round.toggle();
+	},200);
+
+		setTimeout(function  () {
+			zeroGame();
+			level=1;
+			var x=randomSpace(0,3);
+			levelArr.push(x);                   
+			$round.show();
+			clearInterval(interval);
+			$round.html(level);
+			loop();
+
+		},7000);
+
 }
